@@ -1,0 +1,15 @@
+---
+const {kind='science',label='Scientific concept illustration'}=Astro.props;
+---
+<svg viewBox="0 0 640 300" role="img" aria-label={label} class="concept-art" fill="none">
+<g stroke="var(--primary)" opacity=".15">{[60,120,180,240].map(y=><path d={`M0 ${y}H640`}/>)}{[80,160,240,320,400,480,560].map(x=><path d={`M${x} 0V300`}/>)}</g>
+<g stroke="var(--primary)" stroke-width="2">
+{(kind==='spacexbot'||kind==='science')&&<><ellipse cx="320" cy="150" rx="210" ry="90" transform="rotate(-12 320 150)"/><circle cx="320" cy="150" r="68"/><path d="M285 120h70v60h-70zM200 126h70v48h-70zM370 126h70v48h-70zM235 126v48m170-48v48M320 120v-30l35-20M355 70l20 15"/><path d="m355 165 38 25 28-17 25 27"/></>}
+{kind==='hanora-ai'&&<><circle cx="320" cy="150" r="44"/>{[[150,80],[490,80],[150,220],[490,220],[320,45],[320,255]].map(([x,y])=><><path d={`M320 150L${x} ${y}`}/><circle cx={x} cy={y} r="18"/></>)}<path d="m298 152 16 16 29-35"/></>}
+{kind==='learn-o-ai'&&<><path d="M320 85c-50-30-110-30-160-15v145c50-15 110-15 160 15 50-30 110-30 160-15V70c-50-15-110-15-160 15Zm0 0v145M185 105l95 5m-95 25 95 5m-95 25 65 5M360 112l35 35 55-55"/><circle cx="420" cy="195" r="32"/><path d="m408 194 10 10 17-22"/></>}
+{kind==='safaiera'&&<><path d="M250 65h140v180H250zM250 135h140M270 88v28m0 42v28M445 95v88a24 24 0 1 0 22 0V95a11 11 0 0 0-22 0Z"/><path d="m155 105 45 18v50c0 27-22 45-45 60-23-15-45-33-45-60v-50Zm-20 60 15 15 30-35"/></>}
+{kind==='vita-mini'&&<><path d="M60 105c120-65 180 85 300 15s170-15 220-15M60 195c120-65 180 85 300 15s170-15 220-15"/><rect x="282" y="138" width="72" height="30" rx="15"/><path d="m270 153-55 0m150 0 50 0m-15-12 15 12-15 12"/><circle cx="318" cy="153" r="55" stroke-dasharray="5 8"/></>}
+{kind==='astrovita'&&<><circle cx="195" cy="130" r="62"/><path d="M138 215v-30l25-18m66 0 24 18v30M160 113h70v37h-70zM290 80h230v150H290zM310 155h30l18-32 22 68 22-55 20 19h78M310 205h130"/><circle cx="486" cy="105" r="8"/></>}
+</g><g fill="var(--accent-color)"><circle cx="70" cy="45" r="3"/><circle cx="570" cy="255" r="3"/></g>
+</svg>
+<style>.concept-art{display:block;width:100%;height:auto;background:var(--card);border-bottom:1px solid var(--border);border-radius:inherit}</style>

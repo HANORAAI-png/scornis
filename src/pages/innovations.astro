@@ -1,0 +1,7 @@
+---
+import Site from '../components/Site.astro';
+import ProjectCards from '../components/ProjectCards.astro';
+import {projects} from '../lib/projects';
+const groups=['Aerospace & Robotics','AI & Digital Solutions','Health & Emerging Technologies'];
+---
+<Site title="Explore Our Innovations | Scornis Research Portfolio" description="Explore six Scornis innovation concepts in aerospace robotics, AI marketing, education, food safety, medical microrobotics, and astronaut health monitoring."><div class="wrap"><section class="page-intro"><p class="eyebrow">One team. Many frontiers.</p><h1>Explore Our Innovations.</h1><p>Different problems require different perspectives. Explore the concepts and technologies being developed across the Scornis portfolio.</p></section><nav class="filters" aria-label="Project categories"><a href="#all">All Projects</a>{groups.map((g,i)=><a href={`#category-${i}`}>{g}</a>)}</nav><div id="all">{groups.map((g,i)=><section class="group" id={`category-${i}`}><h2>{g}</h2><ProjectCards items={projects.filter(p=>p.group===g)}/></section>)}</div><section class="notice"><p>Our projects are at different development stages. Proposed capabilities are not presented as implemented features, clinically validated systems, or flight-ready technologies.</p></section><section class="section"><a class="button primary" href="/contact">Collaborate With Us ↗</a></section></div></Site>

@@ -1,0 +1,6 @@
+---
+import ConceptArt from './ConceptArt.astro';
+import {projects} from '../lib/projects';
+const {items=projects}=Astro.props;
+---
+<div class="grid">{items.map((p)=><article class="card"><ConceptArt kind={p.slug} label={`${p.name}: conceptual system illustration, not a deployed technology`}/><div class="card-body"><span class="eyebrow">{p.category}</span><h3>{p.name}</h3><p>{p.description}</p><span class="status">◌ {p.status}</span><a class="project-link" href={`/projects/${p.slug}`}>View Project <span aria-hidden="true">↗</span></a></div></article>)}</div>
